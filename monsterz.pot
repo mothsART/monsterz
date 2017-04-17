@@ -1,0 +1,253 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-17 22:51+CEST\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: ./monsterz.py:56
+msgid "hairy"
+msgstr ""
+
+#: ./monsterz.py:57
+msgid "cloudy"
+msgstr ""
+
+#: ./monsterz.py:58
+msgid "cyclop"
+msgstr ""
+
+#: ./monsterz.py:59
+msgid "auntie"
+msgstr ""
+
+#: ./monsterz.py:60
+msgid "roswell"
+msgstr ""
+
+#: ./monsterz.py:61
+msgid "horny"
+msgstr ""
+
+#: ./monsterz.py:62
+msgid "bluewhale"
+msgstr ""
+
+#: ./monsterz.py:63
+msgid "octopie"
+msgstr ""
+
+#: ./monsterz.py:64
+msgid "ghost"
+msgstr ""
+
+#: ./monsterz.py:274
+msgid "NOBODY"
+msgstr ""
+
+#: ./monsterz.py:875
+msgid "GAME OVER"
+msgstr ""
+
+#: ./monsterz.py:879
+msgid "YUO = TEH L0SER"
+msgstr ""
+
+#: ./monsterz.py:881
+msgid "WELL, AT LEAST YOU TRIED"
+msgstr ""
+
+#: ./monsterz.py:883
+msgid "W00T! YUO IS TEH R0X0R"
+msgstr ""
+
+#: ./monsterz.py:885
+msgid "ZOMFG!!!111!!! YUO PWND!!!%$#@%@#"
+msgstr ""
+
+#: ./monsterz.py:892
+msgid "PAUSED"
+msgstr ""
+
+#: ./monsterz.py:897 ./monsterz.py:1508
+msgid "TRAINING"
+msgstr ""
+
+#: ./monsterz.py:899
+msgid "LEVEL"
+msgstr ""
+
+#: ./monsterz.py:904
+msgid "MONSTERS NEEDED"
+msgstr ""
+
+#: ./monsterz.py:906
+msgid "PUZZLE LEVEL"
+msgstr ""
+
+#: ./monsterz.py:908
+msgid "UNLIMITED LEVEL"
+msgstr ""
+
+#: ./monsterz.py:913
+msgid "LUCKY MONSTER"
+msgstr ""
+
+#: ./monsterz.py:927
+msgid "COMPLETED"
+msgstr ""
+
+#: ./monsterz.py:929
+msgid "LEVEL UP"
+msgstr ""
+
+#: ./monsterz.py:934 ./monsterz.py:1797
+msgid "NO MORE MOVES"
+msgstr ""
+
+#: ./monsterz.py:991
+msgid "PAUSE"
+msgstr ""
+
+#: ./monsterz.py:994
+msgid "ABORT"
+msgstr ""
+
+#: ./monsterz.py:1358
+msgid "SOUND FX"
+msgstr ""
+
+#: ./monsterz.py:1365
+msgid "MUSIC"
+msgstr ""
+
+#: ./monsterz.py:1439
+msgid "HELP"
+msgstr ""
+
+#: ./monsterz.py:1439
+msgid "NEW GAME"
+msgstr ""
+
+#: ./monsterz.py:1439
+msgid "QUIT"
+msgstr ""
+
+#: ./monsterz.py:1439
+msgid "SCORES"
+msgstr ""
+
+#: ./monsterz.py:1508
+msgid "CLASSIC"
+msgstr ""
+
+#: ./monsterz.py:1508
+msgid "PUZZLE"
+msgstr ""
+
+#: ./monsterz.py:1540
+msgid "GAME TYPE"
+msgstr ""
+
+#: ./monsterz.py:1565
+msgid "DIFFICULTY"
+msgstr ""
+
+#: ./monsterz.py:1676
+msgid "SWAP ADJACENT MONSTERS TO CREATE"
+msgstr ""
+
+#: ./monsterz.py:1679
+msgid "ALIGNMENTS OF THREE OR MORE. NEW"
+msgstr ""
+
+#: ./monsterz.py:1682
+msgid "MONSTERS WILL FILL THE HOLES."
+msgstr ""
+
+#: ./monsterz.py:1723
+msgid "CREATE CHAIN REACTIONS TO GET TWICE"
+msgstr ""
+
+#: ./monsterz.py:1726
+msgid "AS MANY POINTS, THEN 4x, 8x ETC."
+msgstr ""
+
+#: ./monsterz.py:1731
+msgid "THE LUCKY MONSTER EARNS YOU TWICE"
+msgstr ""
+
+#: ./monsterz.py:1734
+msgid "AS MANY POINTS AS OTHER MONSTERS."
+msgstr ""
+
+#: ./monsterz.py:1783
+msgid "YOU CAN ALWAYS PERFORM A VALID MOVE."
+msgstr ""
+
+#: ./monsterz.py:1786
+msgid "WHEN NO MORE MOVES ARE POSSIBLE, YOU"
+msgstr ""
+
+#: ./monsterz.py:1789
+msgid "GET A COMPLETE NEW BOARD."
+msgstr ""
+
+#: ./monsterz.py:1801
+msgid "USE THE EYE TO FIND WHERE TO PLAY."
+msgstr ""
+
+#: ./monsterz.py:1804
+msgid "EACH 10,000 POINTS YOU GET A NEW"
+msgstr ""
+
+#: ./monsterz.py:1807
+msgid "EYE. YOU CAN'T HAVE MORE THAN 3."
+msgstr ""
+
+#: ./monsterz.py:1813
+msgid "WHEN ONLY ONE KIND OF MONSTER IS"
+msgstr ""
+
+#: ./monsterz.py:1816
+msgid "NEEDED TO FINISH THE LEVEL, MONSTERS"
+msgstr ""
+
+#: ./monsterz.py:1819
+msgid "OF THAT KIND GET AN ANGRY FACE."
+msgstr ""
+
+#: ./monsterz.py:1839
+msgid "CLICK ON THE BONUS TO REMOVE ALL"
+msgstr ""
+
+#: ./monsterz.py:1842
+msgid "MONSTERS OF A RANDOM KIND."
+msgstr ""
+
+#: ./monsterz.py:1872
+msgid "IN PUZZLE MODE, PUT TOGETHER THE"
+msgstr ""
+
+#: ./monsterz.py:1875
+msgid "PUZZLE BY MOVING PIECES AROUND. BE"
+msgstr ""
+
+#: ./monsterz.py:1878
+msgid "CAREFUL NOT TO GET STUCK!"
+msgstr ""
+
+#: ./monsterz.py:1937
+msgid "HIGH SCORES"
+msgstr ""
+

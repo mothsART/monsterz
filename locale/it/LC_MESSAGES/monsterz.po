@@ -1,0 +1,136 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-04-17 15:48+CEST\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: ./monsterz.py:47
+msgid "hairy"
+msgstr "buffopelo"
+
+#: ./monsterz.py:48
+msgid "cloudy"
+msgstr "nuvolastra"
+
+#: ./monsterz.py:49
+msgid "cyclop"
+msgstr "ciclope"
+
+#: ./monsterz.py:50
+msgid "auntie"
+msgstr "ziantonietta"
+
+#: ./monsterz.py:51
+msgid "roswell"
+msgstr "roswell"
+
+#: ./monsterz.py:52
+msgid "horny"
+msgstr "cornutazzo"
+
+#: ./monsterz.py:53
+msgid "bluewhale"
+msgstr "balenablu"
+
+#: ./monsterz.py:54
+msgid "octopie"
+msgstr "polipetto"
+
+#: ./monsterz.py:55
+msgid "ghost"
+msgstr "fantasmino"
+
+#: ./monsterz.py:267 ./monsterz.py:1504
+msgid "CLASSIC"
+msgstr ""
+
+#: ./monsterz.py:270
+msgid "NOBODY"
+msgstr ""
+
+#: ./monsterz.py:895
+msgid "LEVEL"
+msgstr ""
+
+#: ./monsterz.py:900
+msgid "MONSTERS NEEDED"
+msgstr ""
+
+#: ./monsterz.py:902
+msgid "PUZZLE LEVEL"
+msgstr ""
+
+#: ./monsterz.py:904
+msgid "UNLIMITED LEVEL"
+msgstr ""
+
+#: ./monsterz.py:909
+msgid "LUCKY MONSTER"
+msgstr ""
+
+#: ./monsterz.py:923
+msgid "COMPLETED"
+msgstr ""
+
+#: ./monsterz.py:925
+msgid "LEVEL UP"
+msgstr ""
+
+#: ./monsterz.py:987
+msgid "PAUSE"
+msgstr ""
+
+#: ./monsterz.py:990
+msgid "ABORT"
+msgstr ""
+
+#: ./monsterz.py:1354
+msgid "SOUND FX"
+msgstr ""
+
+#: ./monsterz.py:1361
+msgid "MUSIC"
+msgstr ""
+
+#: ./monsterz.py:1435
+msgid "HELP"
+msgstr ""
+
+#: ./monsterz.py:1435
+msgid "NEW GAME"
+msgstr ""
+
+#: ./monsterz.py:1435
+msgid "QUIT"
+msgstr ""
+
+#: ./monsterz.py:1435
+msgid "SCORES"
+msgstr ""
+
+#: ./monsterz.py:1504
+msgid "PUZZLE"
+msgstr ""
+
+#: ./monsterz.py:1504
+msgid "TRAINING"
+msgstr ""
+
+#: ./monsterz.py:1536
+msgid "GAME TYPE"
+msgstr ""
+
+#: ./monsterz.py:1561
+msgid "DIFFICULTY"
+msgstr ""
+

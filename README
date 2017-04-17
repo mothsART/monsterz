@@ -21,3 +21,10 @@ Zookeeper winning techniques:
 - ZOO KEEPER必勝法:
   http://www.hx.sakura.ne.jp/~die-sque/dice-k/text/game/zookeeper.htm
 
+
+I18n
+====
+
+pygettext -o monsterz.pot ./monsterz.py
+
+msgfmt -o monsterz.mo monsterz.po

@@ -11,6 +11,18 @@
    Public License, Version 2, as published by Sam Hocevar. See
    http://sam.zoy.org/projects/COPYING.WTFPL for more details.
 """
+import os
+import gettext
+
+t = gettext.translation(
+    'monsterz', 
+    os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        'locale/'
+    )
+)
+_ = t.ugettext
+#_ = gettext.ugettext
 
 import pygame
 from pygame.locals import *
@@ -40,15 +52,17 @@ ITEM_SPECIAL = ITEMS + 1
 ITEM_METAL = ITEMS + 2
 ITEM_PUZZLE = ITEMS + 3
 
-LANG = getenv('LC_MESSAGES') or getenv('LC_ALL') or getenv('LANG') or ''
-
-ITEM_NAMES = ['hairy','cloudy','cyclop','auntie','roswell','horny',
-              'bluewhale','octopie','ghost']
-
-if LANG[:2] == 'it':
-    ITEM_NAMES=['buffopelo','nuvolastra','ciclope',
-                'ziantonietta','roswell','cornutazzo',
-                'balenablu','polipetto','fantasmino']
+ITEM_NAMES = [
+    _('hairy'),
+    _('cloudy'),
+    _('cyclop'),
+    _('auntie'),
+    _('roswell'),
+    _('horny'),
+    _('bluewhale'),
+    _('octopie'),
+    _('ghost')
+]
 
 STATUS_MENU = 0
 STATUS_NEW = 1
@@ -257,7 +271,7 @@ class Settings:
         for game in ['CLASSIC']:
             if not self.scores.has_key(game):
                 self.scores[game] = []
-            for x in range(20): self._add_score(game, 'NOBODY', 0, 1)
+            for x in range(20): self._add_score(game, _('NOBODY'), 0, 1)
 
     def _add_score(self, game, name, score, level):
         if not self.scores.has_key(game):
@@ -858,45 +872,45 @@ class Game:
         system.blit(timebar, (13, 436))
         if self.lost_timer == -1:
             # Print play again message
-            text = fonter.render('GAME OVER', 80)
+            text = fonter.render(_('GAME OVER'), 80)
             w, h = text.get_rect().size
             system.blit(text, (24 + 192 - w / 2, 24 + 192 - h / 2))
             if self.score < 5000:
-                msg = 'YUO = TEH L0SER'
+                msg = _('YUO = TEH L0SER')
             elif self.score < 15000:
-                msg = 'WELL, AT LEAST YOU TRIED'
+                msg = _('WELL, AT LEAST YOU TRIED')
             elif self.score < 30000:
-                msg = 'W00T! YUO IS TEH R0X0R'
+                msg = _('W00T! YUO IS TEH R0X0R')
             else:
-                msg = 'ZOMFG!!!111!!! YUO PWND!!!%$#@%@#'
+                msg = _('ZOMFG!!!111!!! YUO PWND!!!%$#@%@#')
             text = fonter.render(msg, 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 192 - w / 2, 24 + 240 - h / 2))
         elif self.paused:
             # Draw pause message
             system.blit(self.pause_bitmap, (72, 24))
-            text = fonter.render('PAUSED', 120)
+            text = fonter.render(_('PAUSED'), 120)
             w, h = text.get_rect().size
             system.blit(text, (24 + 192 - w / 2, 24 + 336 - h / 2))
         elif self.splash:
             if self.type == GAME_TRAINING:
-                msg = 'TRAINING'
+                msg = _('TRAINING')
             elif self.type in [GAME_CLASSIC, GAME_PUZZLE]:
-                msg = 'LEVEL ' + str(self.level)
+                msg = _('LEVEL') + ' ' + str(self.level)
             text = fonter.render(msg, 60)
             w, h = text.get_rect().size
             system.blit(text, (24 + 192 - w / 2, 24 + 144 - h / 2))
             if self.needed[0]:
-                msg = 'MONSTERS NEEDED: ' + str(self.needed[0])
+                msg = _('MONSTERS NEEDED') + ': ' + str(self.needed[0])
             elif self.type == GAME_PUZZLE:
-                msg = 'PUZZLE LEVEL'
+                msg = _('PUZZLE LEVEL')
             else:
-                msg = 'UNLIMITED LEVEL'
+                msg = _('UNLIMITED LEVEL')
             text = fonter.render(msg, 40)
             w, h = text.get_rect().size
             system.blit(text, (24 + 192 - w / 2, 24 + 240 - h / 2))
             if self.lucky != -1:
-                text = fonter.render('LUCKY MONSTER:', 40)
+                text = fonter.render(_('LUCKY MONSTER') + ':', 40)
                 w, h = text.get_rect().size
                 system.blit(text, (192 - w / 2 - 8, 24 + 288 - h / 2))
                 system.blit(data.normal[self.lucky], (192 + w / 2, 288))
@@ -910,14 +924,14 @@ class Game:
             # Print new level stuff
             if self.level_timer > SCROLL_DELAY / 2:
                 if self.type == GAME_PUZZLE:
-                    text = fonter.render('COMPLETED!', 80)
+                    text = fonter.render(_('COMPLETED') + '!', 80)
                 else:
-                    text = fonter.render('LEVEL UP!', 80)
+                    text = fonter.render(_('LEVEL UP') + '!', 80)
                 w, h = text.get_rect().size
                 system.blit(text, (24 + 192 - w / 2, 24 + 192 - h / 2))
             # When no more moves are possible
             if self.board_timer > SCROLL_DELAY / 2:
-                text = fonter.render('NO MORE MOVES!', 60)
+                text = fonter.render(_('NO MORE MOVES') + '!', 60)
                 w, h = text.get_rect().size
                 system.blit(text, (24 + 192 - w / 2, 24 + 192 - h / 2))
             # Print bonus
@@ -974,10 +988,10 @@ class Game:
                 led, color = data.led_off, (180, 150, 127)
             c = map(lambda a, b: b - (b - a) * self.psat[0] / 255, r, color)
             system.blit(led, (440, 298))
-            system.blit(fonter.render('PAUSE', 30, c), (470, 296))
+            system.blit(fonter.render(_('PAUSE'), 30, c), (470, 296))
             color = (180, 150, 127)
             c = map(lambda a, b: b - (b - a) * self.psat[1] / 255, r, color)
-            system.blit(fonter.render('ABORT', 30, c), (470, 326))
+            system.blit(fonter.render(_('ABORT'), 30, c), (470, 326))
             for x in range(2):
                 if self.psat[x]:
                     self.psat[x] = self.psat[x] * 8 / 10
@@ -1341,21 +1355,21 @@ class Monsterz:
                 led, color = data.led_off, (180, 150, 127)
             c = map(lambda a, b: b - (b - a) * self.gsat[0] / 255, r, color)
             system.blit(led, (440, 378))
-            system.blit(fonter.render('SOUND FX', 30, c), (470, 376))
+            system.blit(fonter.render(_('SOUND FX'), 30, c), (470, 376))
             if settings.get('music'):
                 led, color = data.led_on, (255, 255, 255)
             else:
                 led, color = data.led_off, (180, 150, 127)
             c = map(lambda a, b: b - (b - a) * self.gsat[1] / 255, r, color)
             system.blit(led, (440, 408))
-            system.blit(fonter.render('MUSIC', 30, c), (470, 406))
+            system.blit(fonter.render(_('MUSIC'), 30, c), (470, 406))
         if settings.get('fullscreen'):
             led, color = data.led_on, (255, 255, 255)
         else:
             led, color = data.led_off, (180, 150, 127)
         c = map(lambda a, b: b - (b - a) * self.gsat[2] / 255, r, color)
-        system.blit(led, (440, 438))
-        system.blit(fonter.render('FULLSCREEN', 30, c), (470, 436))
+        #system.blit(led, (440, 438))
+        #system.blit(fonter.render('FULLSCREEN', 30, c), (470, 436))
         for x in range(3):
             if self.gsat[x]:
                 self.gsat[x] = self.gsat[x] * 8 / 10
@@ -1422,7 +1436,7 @@ class Monsterz:
         self.copyright_draw()
         colors = [[0, 255, 0], [255, 0, 255], [255, 255, 0], [255, 0, 0]]
         shapes = [2, 3, 4, 0]
-        messages = ['NEW GAME', 'HELP', 'SCORES', 'QUIT']
+        messages = [_('NEW GAME'), _('HELP'), _('SCORES'), _('QUIT')]
         x, y = data.screen2board(pygame.mouse.get_pos())
         if y == 4 and 2 <= x <= 5:
             marea = STATUS_NEW
@@ -1491,7 +1505,7 @@ class Monsterz:
         difficulty = settings.get('difficulty')
         self.generic_draw()
         self.copyright_draw()
-        messages = ['CLASSIC', 'PUZZLE', '', 'TRAINING']
+        messages = [_('CLASSIC'), _('PUZZLE'), '', _('TRAINING')]
         x, y = data.screen2board(pygame.mouse.get_pos())
         if y == 2 and 1 <= x <= 6:
             narea = GAME_CLASSIC
@@ -1523,7 +1537,7 @@ class Monsterz:
             system.play('click')
         self.narea = narea
         # Print menu
-        text = fonter.render('GAME TYPE', 60)
+        text = fonter.render(_('GAME TYPE'), 60)
         w, h = text.get_rect().size
         system.blit(text, (24 + 192 - w / 2, 24 + 24 - h / 2))
         for i in range(4):
@@ -1548,7 +1562,7 @@ class Monsterz:
         # Print wanted monsterz
         for i in range(items):
             system.blit(data.normal[i], (24 + 96 + ITEM_SIZE * 3 * i / (items - 1), 24 + ITEM_SIZE * 6))
-        text = fonter.render('DIFFICULTY ' + str(difficulty), 36)
+        text = fonter.render(_('DIFFICULTY') + ' ' + str(difficulty), 36)
         w, h = text.get_rect().size
         system.blit(text, (24 + 192 - w / 2, 24 + ITEM_SIZE * 7 + 24 - h / 2))
         # Handle events
@@ -1659,13 +1673,13 @@ class Monsterz:
         system.blit(text, (24 + 192 - w / 2, 24 + 24 - h / 2))
         if self.page == 1:
             # Explanation 1
-            text = fonter.render('SWAP ADJACENT MONSTERS TO CREATE', 24)
+            text = fonter.render(_('SWAP ADJACENT MONSTERS TO CREATE'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6, 24 + 84 - h / 2))
-            text = fonter.render('ALIGNMENTS OF THREE OR MORE. NEW', 24)
+            text = fonter.render(_('ALIGNMENTS OF THREE OR MORE. NEW'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6, 24 + 108 - h / 2))
-            text = fonter.render('MONSTERS WILL FILL THE HOLES.', 24)
+            text = fonter.render(_('MONSTERS WILL FILL THE HOLES.'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6, 24 + 132 - h / 2))
             # Iter 1
@@ -1706,18 +1720,18 @@ class Monsterz:
             x, y = data.board2screen((7, 4))
             system.blit(text, (x + 24 - w / 2, y + 24 - h / 2))
             # Explanation 2
-            text = fonter.render('CREATE CHAIN REACTIONS TO GET TWICE', 24)
+            text = fonter.render(_('CREATE CHAIN REACTIONS TO GET TWICE'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6, 24 + 348 - h / 2))
-            text = fonter.render('AS MANY POINTS, THEN 4x, 8x ETC.', 24)
+            text = fonter.render(_('AS MANY POINTS, THEN 4x, 8x ETC.'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6, 24 + 372 - h / 2))
         elif self.page == 2:
             # Explanation 1
-            text = fonter.render('THE LUCKY MONSTER EARNS YOU TWICE', 24)
+            text = fonter.render(_('THE LUCKY MONSTER EARNS YOU TWICE'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6, 24 + 108 - h / 2))
-            text = fonter.render('AS MANY POINTS AS OTHER MONSTERS.', 24)
+            text = fonter.render(_('AS MANY POINTS AS OTHER MONSTERS.'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6, 24 + 132 - h / 2))
             shape = data.special[self.timer % 7]
@@ -1766,13 +1780,13 @@ class Monsterz:
                         count += 3
         elif self.page == 3:
             # Explanation 1
-            text = fonter.render('YOU CAN ALWAYS PERFORM A VALID MOVE.', 24)
+            text = fonter.render(_('YOU CAN ALWAYS PERFORM A VALID MOVE.'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6, 24 + 84 - h / 2))
-            text = fonter.render('WHEN NO MORE MOVES ARE POSSIBLE, YOU', 24)
+            text = fonter.render(_('WHEN NO MORE MOVES ARE POSSIBLE, YOU'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6, 24 + 108 - h / 2))
-            text = fonter.render('GET A COMPLETE NEW BOARD.', 24)
+            text = fonter.render(_('GET A COMPLETE NEW BOARD.'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6, 24 + 132 - h / 2))
             # Surprised
@@ -1780,29 +1794,29 @@ class Monsterz:
             for x in range(8):
                 system.blit(data.surprise[(x * 3 + 2) % 8], data.board2screen((x, 3)))
                 system.blit(data.surprise[(x * 7) % 8], data.board2screen((x, 4)))
-            text = fonter.render('NO MORE MOVES!', 60)
+            text = fonter.render(_('NO MORE MOVES') + '!', 60)
             w, h = text.get_rect().size
             system.blit(text, (24 + 192 - w / 2, 24 + 192 - h / 2))
             # Explanation 2
-            text = fonter.render('USE THE EYE TO FIND WHERE TO PLAY.', 24)
+            text = fonter.render(_('USE THE EYE TO FIND WHERE TO PLAY.'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6 + 48, 24 + 300 - h / 2))
-            text = fonter.render('EACH 10,000 POINTS YOU GET A NEW', 24)
+            text = fonter.render(_('EACH 10,000 POINTS YOU GET A NEW'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6 + 48, 24 + 324 - h / 2))
-            text = fonter.render('EYE. YOU CAN\'T HAVE MORE THAN 3.', 24)
+            text = fonter.render(_('EYE. YOU CAN\'T HAVE MORE THAN 3.'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6 + 48, 24 + 348 - h / 2))
             system.blit(data.eye, (24 + 6, 24 + 306))
         elif self.page == 4:
             # Explanation 1
-            text = fonter.render('WHEN ONLY ONE KIND OF MONSTER IS', 24)
+            text = fonter.render(_('WHEN ONLY ONE KIND OF MONSTER IS'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6, 24 + 84 - h / 2))
-            text = fonter.render('NEEDED TO FINISH THE LEVEL, MONSTERS', 24)
+            text = fonter.render(_('NEEDED TO FINISH THE LEVEL, MONSTERS'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6, 24 + 108 - h / 2))
-            text = fonter.render('OF THAT KIND GET AN ANGRY FACE.', 24)
+            text = fonter.render(_('OF THAT KIND GET AN ANGRY FACE.'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6, 24 + 132 - h / 2))
             # Print done/needed
@@ -1822,10 +1836,10 @@ class Monsterz:
                 text = fonter.render(str(i * 3), 36)
                 system.blit(text, (x + 44, y + 2))
             # Explanation 2
-            text = fonter.render('CLICK ON THE BONUS TO REMOVE ALL', 24)
+            text = fonter.render(_('CLICK ON THE BONUS TO REMOVE ALL'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6, 24 + 252 - h / 2))
-            text = fonter.render('MONSTERS OF A RANDOM KIND.', 24)
+            text = fonter.render(_('MONSTERS OF A RANDOM KIND.'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6, 24 + 276 - h / 2))
             shape = data.special[self.timer % 7]
@@ -1855,13 +1869,13 @@ class Monsterz:
             system.blit(text, (x + 24 - w / 2, y + 24 - h / 2))
         elif self.page == 5:
             # Explanation 1
-            text = fonter.render('IN PUZZLE MODE, PUT TOGETHER THE', 24)
+            text = fonter.render(_('IN PUZZLE MODE, PUT TOGETHER THE'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6, 24 + 84 - h / 2))
-            text = fonter.render('PUZZLE BY MOVING PIECES AROUND. BE', 24)
+            text = fonter.render(_('PUZZLE BY MOVING PIECES AROUND. BE'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6, 24 + 108 - h / 2))
-            text = fonter.render('CAREFUL NOT TO GET STUCK!', 24)
+            text = fonter.render(_('CAREFUL NOT TO GET STUCK!'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6, 24 + 132 - h / 2))
             # Iter 1
@@ -1920,7 +1934,7 @@ class Monsterz:
     def iterate_scores(self):
         self.generic_draw()
         self.copyright_draw()
-        text = fonter.render('HIGH SCORES', 60)
+        text = fonter.render(_('HIGH SCORES'), 60)
         w, h = text.get_rect().size
         system.blit(text, (24 + 192 - w / 2, 24 + 24 - h / 2))
         # Print our list
