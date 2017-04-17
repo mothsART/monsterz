@@ -1,0 +1,137 @@
+monsterz (0.7.1-9) unstable; urgency=medium
+
+  * Team upload.
+  * Declare compliance with Debian Policy 3.9.6.
+  * Vcs-Browser: Use https.
+  * wrap-and-sort -sa.
+  * Remove hardening-wrapper and use dpkg-buildflags instead. Fix Lintian error
+    build-depends-on-obsolete-package. Add hardening.patch.
+  * Add keywords to desktop file.
+
+ -- Markus Koschany <apo@debian.org>  Sat, 07 Nov 2015 03:28:57 +0100
+
+monsterz (0.7.1-8) unstable; urgency=medium
+
+  * Team upload.
+  * Do not use the obsolete and incorrect full path to dpkg-statoverride.
+    Closes: #770057
+
+ -- Peter Pentchev <roam@ringlet.net>  Sat, 29 Nov 2014 02:25:44 +0200
+
+monsterz (0.7.1-7) unstable; urgency=low
+
+  * Team upload.
+  * debian/control:
+    - Use canonical VCS-URI.
+    - Add Breaks and Replaces relation to monsterz-data. This prevents that
+      monsterz fails to upgrade. (Closes: #710733)
+    - monsterz: Tighten dependency on monsterz-data (>= ${source:Version}).
+  * Bump compatibility level to 9 and require debhelper >= 9 for automatic
+    hardening build flags.
+  * Use hardening-wrapper to harden the monsterz binary completely hence we can
+    drop 040_makefile_cflags.patch.
+  * Fix lintian issue copyright-refers-to-symlink-license and point to GPL-2
+    and LGPL-2.1 licenses.
+  * Add preinst script because dpkg does not replace symlinks with directories
+    and vice versa, therefore maintainer scripts need to be used.
+
+ -- Markus Koschany <apo@gambaru.de>  Mon, 01 Jul 2013 12:02:42 +0200
+
+monsterz (0.7.1-6) unstable; urgency=low
+
+  * Remove yes flag from --with-python2. (Closes: #710376).
+
+ -- Barry deFreese <bdefreese@debian.org>  Thu, 30 May 2013 05:40:28 -0400
+
+monsterz (0.7.1-5) unstable; urgency=low
+
+  * Add startup animation patch. (Closes: #439807).
+    - Thanks to A Mennucc for the patch.
+  * Move existing manpage to section 6. (Closes: #605981).
+  * Change packaging to dh7 style.
+  * Add patch to pass CFLAGS to Makefile.
+    - Add hardening flags.
+  * Change to source format 3.0 quilt.
+    - Drop quilt build-dep.
+  * Bump Standards Version to 3.9.4.
+
+ -- Barry deFreese <bdefreese@debian.org>  Sun, 26 May 2013 21:35:56 -0400
+
+monsterz (0.7.1-4) unstable; urgency=low
+
+  * Add monsterz.postrm to purge /var/games/monsterz  
+  * Add myself in Uploaders
+  * Standards-Version: 3.8.2, no change 
+
+ -- Gonéri Le Bouder <goneri@rulezlan.org>  Mon, 27 Jul 2009 18:42:39 +0200
+
+monsterz (0.7.1-3) unstable; urgency=low
+
+  [ Barry deFreese ]
+  * Add myself to uploaders.
+  * 020_fix_blit_crash.diff - (Closes: #523877). 
+    + Fix crash with blit in pygame 1.8.1.
+    + Thanks to Arnaud Jeansen and RafaÅ‚ Psota.
+  * Add set -e to postinst.
+  * Fix up manpage what-is section.
+  * Bump Standards Version to 3.8.1.
+
+ -- Barry deFreese <bdefreese@debian.org>  Fri, 15 May 2009 21:18:05 -0400
+
+monsterz (0.7.1-2) unstable; urgency=low
+
+  * Remove deprecated Encoding key from .desktop file
+
+  [ Sam Hocevar ]
+  * debian/control:
+    + Use quilt for patch management.
+
+  * debian/patches/010_64-bit-alignment-issues-with-python2.5.diff:
+    + New patch from upstream. Fix a startup crash on 64-bit systems
+      (Closes: #373905).
+
+ -- Sam Hocevar (Debian packages) <sam+deb@zoy.org>  Fri, 09 May 2008 16:33:52 +0000
+
+monsterz (0.7.1-1) unstable; urgency=high
+
+  [ Eddy Petrișor ]
+  * removed invalid category "Application" from the desktop file
+
+  [ Cyril Brulebois ]
+  * Adjusted XS-Vcs-Svn and XS-Vcs-Browser fields in the control file.
+
+  [ Barry deFreese ]
+  * Add simple man page
+  * Remove short description from long description
+  * Make distclean not ignore errors
+
+  [ Sam Hocevar ]
+  * New upstream release. Removes potentially offensive language from the
+    title page (Closes: #456781).
+  * debian/control:
+    + Set policy to 3.7.3.
+    + Added Homepage: field.
+    + Fixed Vcs: fields, they don't need "XS-" prepended.
+  * debian/copyright:
+    + Add link to the GPL and the LGPL texts.
+
+ -- Sam Hocevar (Debian packages) <sam+deb@zoy.org>  Wed, 11 Jul 2007 11:06:35 +0300
+
+monsterz (0.7.0-2) unstable; urgency=low
+
+  * Moved packaging to the Debian Games Team.
+  * debian/control:
+    + Added Vcs fields.
+  * debian/compat:
+    + Bumped level to 5.
+  * debian/monsterz.desktop:
+    + Added desktop file, courtesy of Jean Privat (Closes: #395908).
+
+ -- Sam Hocevar (Debian packages) <sam+deb@zoy.org>  Fri, 30 Mar 2007 12:07:13 +0200
+
+monsterz (0.7.0-1) unstable; urgency=low
+
+  * Initial Debian upload (Closes: #329323).
+
+ -- Sam Hocevar (Debian packages) <sam+deb@zoy.org>  Wed, 10 May 2006 01:11:29 -0500
+

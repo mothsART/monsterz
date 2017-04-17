@@ -1,0 +1,30 @@
+#! /bin/sh
+
+set -e
+
+DATA=/var/games/monsterz
+PROG=/usr/games/monsterz
+
+case "$1" in
+  configure)
+    # Properly use statoverride
+    if ! dpkg-statoverride --list "$PROG" >/dev/null ; then
+      chown root:games "$PROG"
+      chmod 2755 "$PROG"
+    fi
+    if [ ! -f "$DATA" ]; then
+        echo "" > "$DATA"
+    fi
+    chown root:games "$DATA"
+    chmod 664 "$DATA"
+    ;;
+  abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+  *)
+    echo "postinst called with unknown argument \`$1'" >&2
+    exit 1
+    ;;
+esac
+
+#DEBHELPER#
+

@@ -1,0 +1,24 @@
+From: Markus Koschany <apo@debian.org>
+Date: Sat, 7 Nov 2015 09:43:31 +0100
+Subject: hardening
+
+Add hardening support for monsterz.
+
+Forwarded: no
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index 6db0ff8..c968d03 100644
+--- a/Makefile
++++ b/Makefile
+@@ -22,7 +22,7 @@ INKSCAPE = inkscape -z
+ all: monsterz
+ 
+ monsterz: monsterz.c
+-	$(CC) -Wall monsterz.c -DDATADIR=\"$(pkgdatadir)\" -DSCOREFILE=\"$(scorefile)\" -o monsterz
++	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -Wall monsterz.c -DDATADIR=\"$(pkgdatadir)\" -DSCOREFILE=\"$(scorefile)\" -o monsterz
+ 
+ bitmap: $(BITMAP)
+ 

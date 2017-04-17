@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+
+#export DH_VERBOSE=1
+
+%:
+	dh $@ --with python2
+
+override_dh_auto_build:
+	$(MAKE) prefix=/usr
+
+override_dh_auto_install:
+	$(MAKE) install prefix=/usr DESTDIR=$(CURDIR)/debian/tmp
+
+override_dh_install:
+	convert graphics/icon.png -sample 32x32 debian/tmp/usr/share/games/monsterz/graphics/icon.xpm
+	mkdir -p debian/tmp/usr/share/applications
+	cp debian/monsterz.desktop debian/tmp/usr/share/applications
+	rm -f debian/tmp/var/games/monsterz
+	dh_install

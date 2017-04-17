@@ -1,0 +1,85 @@
+Author: A Mennucc <mennucc1@debian.org>
+Description: Add startup animation with random monster.
+Index: monsterz-0.7.1/monsterz.py
+===================================================================
+--- monsterz-0.7.1.orig/monsterz.py	2013-05-26 22:22:45.000000000 -0400
++++ monsterz-0.7.1/monsterz.py	2013-05-26 22:28:08.000000000 -0400
+@@ -17,7 +17,7 @@
+ from random import randint
+ from sys import argv, exit, platform
+ from os.path import join, isdir, isfile, dirname, expanduser
+-from os import write, mkdir
++from os import write, mkdir, getenv
+ 
+ # String constants
+ VERSION = '0.7.1'
+@@ -40,6 +40,16 @@
+ ITEM_METAL = ITEMS + 2
+ ITEM_PUZZLE = ITEMS + 3
+ 
++LANG = getenv('LC_MESSAGES') or getenv('LC_ALL') or getenv('LANG') or ''
++
++ITEM_NAMES = ['hairy','cloudy','cyclop','auntie','roswell','horny',
++              'bluewhale','octopie','ghost']
++
++if LANG[:2] == 'it':
++    ITEM_NAMES=['buffopelo','nuvolastra','ciclope',
++                'ziantonietta','roswell','cornutazzo',
++                'balenablu','polipetto','fantasmino']
++
+ STATUS_MENU = 0
+ STATUS_NEW = 1
+ STATUS_GAME = 2
+@@ -890,6 +900,10 @@
+                 w, h = text.get_rect().size
+                 system.blit(text, (192 - w / 2 - 8, 24 + 288 - h / 2))
+                 system.blit(data.normal[self.lucky], (192 + w / 2, 288))
++                text = fonter.render(ITEM_NAMES[self.lucky],20)
++                wn, hn = text.get_rect().size
++                system.blit(text, (192 + w/2 - wn/2 + ITEM_SIZE/2,
++                                   24 + 288 + ITEM_SIZE - h/2 - hn/2))
+         elif self.lost_timer != -1:
+             # Draw pieces
+             self.board_draw()
+@@ -1374,6 +1388,33 @@
+                 return True
+         return False
+ 
++    wander_monster=randint(0,ITEMS-1)
++    wander_x=None
++    wander_y=0
++    def wanderer_draw(self):
++        if self.wander_x==None :
++            if randint(0,30) == 1 :
++                self.wander_monster = (self.wander_monster+1)%ITEMS
++                self.wander_y=randint(20,SCREEN_HEIGHT-ITEM_SIZE-20)
++                self.wander_x=-ITEM_SIZE
++            return
++        if randint(0,10) == 1 :
++            monster = data.blink[self.wander_monster]
++        else:
++            monster = data.normal[self.wander_monster]
++        system.blit(monster, (self.wander_x, self.wander_y))
++        system.blit(fonter.render(ITEM_NAMES[self.wander_monster], 
++                                  30, (250,250,250)),
++                                  (self.wander_x+ITEM_SIZE, self.wander_y+ITEM_SIZE/2-15))
++        if self.wander_x < SCREEN_WIDTH/3 or self.wander_x > (SCREEN_WIDTH/3)*2 :
++            self.wander_x += randint(4,8)
++            self.wander_y += randint(-2,2)
++        else:
++            self.wander_x += 3
++            self.wander_y += randint(-1,1)
++        if self.wander_x > SCREEN_WIDTH :
++            self.wander_x=None
++
+     msat = [0] * 4
+     marea = None
+     def iterate_menu(self):
+@@ -1403,6 +1444,7 @@
+         # Print logo and menu
+         w, h = data.logo.get_size()
+         system.blit(data.logo, (24 + 192 - w / 2, 24 + 96 - h / 2))
++        self.wanderer_draw()
+         for x in range(4):
+             if self.msat[x] > 180:
+                 monster = data.surprise[shapes[x]]
