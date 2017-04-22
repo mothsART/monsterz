@@ -1,4 +1,0 @@
-010_64-bit-alignment-issues-with-python2.5.diff
-020_fix_blit_crash.diff
-030_startup_screen.patch
-hardening.patch

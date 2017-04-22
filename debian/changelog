@@ -1,4 +1,9 @@
-monsterz (0.7.1-9) unstable; urgency=medium
+monsterz (0.8.1) unstable; urgency=medium
+
+  * Add gettext I18n
+  * Add a full french translation
+
+monsterz (0.7.1-9) unstable; urgency=low
 
   * Team upload.
   * Declare compliance with Debian Policy 3.9.6.

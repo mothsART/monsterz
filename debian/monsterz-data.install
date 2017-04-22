@@ -1,3 +1,4 @@
 /usr/share/games/monsterz/*.py
+locale/* /usr/share/games/monsterz/locale
 /usr/share/games/monsterz/graphics/*.png
 /usr/share/games/monsterz/sound
