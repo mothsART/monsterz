@@ -1,7 +1,9 @@
-monsterz (0.8.1) unstable; urgency=medium
+monsterz (0.8.1-1) unstable; urgency=medium
 
   * Add gettext I18n
   * Add a full french translation
+
+ -- Ferry Jérémie <jerem.ferry@gmail.com>  Sat, 22 Apr 2017 15:02:42 +0100
 
 monsterz (0.7.1-9) unstable; urgency=low
 
