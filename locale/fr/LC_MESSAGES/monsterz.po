@@ -57,7 +57,7 @@ msgstr "Classique"
 
 #: ./monsterz.py:270
 msgid "NOBODY"
-msgstr "Personne"
+msgstr "Inconnu"
 
 #: ./monsterz.py:875
 msgid "GAME OVER"
@@ -193,39 +193,42 @@ msgstr "2x plus de points que les autres monstres."
 
 #: ./monsterz.py:1783
 msgid "YOU CAN ALWAYS PERFORM A VALID MOVE."
-msgstr "Il est toujours possible d'effectuer un mouvement valide."
+msgstr "Il est toujours possible d'effectuer un mouvement"
 
 #: ./monsterz.py:1786
 msgid "WHEN NO MORE MOVES ARE POSSIBLE, YOU"
-msgstr "Quand il n'y a plus aucun mouvement de disponible, vous"
+msgstr "valide. Quand il n'y a plus aucun mouvement de"
 
 #: ./monsterz.py:1789
 msgid "GET A COMPLETE NEW BOARD."
-msgstr "repartez sur une nouvelle grille."
+msgstr "disponible, vous repartez sur une nouvelle grille."
 
 #: ./monsterz.py:1801
 msgid "USE THE EYE TO FIND WHERE TO PLAY."
-msgstr "Vous pouvez utiliser les yeux pour savoir où jouer."
+msgstr "Vous pouvez utiliser les yeux pour savoir"
 
 #: ./monsterz.py:1804
 msgid "EACH 10,000 POINTS YOU GET A NEW"
-msgstr "Tout les 10 000 points vous cumulez un nouvel oeil."
+msgstr " où jouer. Tous les 10 000 points vous"
 
 #: ./monsterz.py:1807
 msgid "EYE. YOU CAN'T HAVE MORE THAN 3."
+msgstr "cumulez un nouvel oeil."
+
+msgid " "
 msgstr "Il n'est pas possible d'en cumuler plus de 3."
 
 #: ./monsterz.py:1813
 msgid "WHEN ONLY ONE KIND OF MONSTER IS"
-msgstr "Quand il n'y a qu'un type de monstre"
+msgstr "Quand il n'y a qu'un type de monstre nécessaire"
 
 #: ./monsterz.py:1816
 msgid "NEEDED TO FINISH THE LEVEL, MONSTERS"
-msgstr "nécessaire pour terminer le niveau, les monstres"
+msgstr "pour terminer le niveau, les monstres de ce type"
 
 #: ./monsterz.py:1819
 msgid "OF THAT KIND GET AN ANGRY FACE."
-msgstr "de ce type sont reconnaissables par leur visages tristes."
+msgstr "sont reconnaissables par leurs visages tristes."
 
 #: ./monsterz.py:1839
 msgid "CLICK ON THE BONUS TO REMOVE ALL"
@@ -237,15 +240,15 @@ msgstr "des monstres d'un genre choisi aléatoirement."
 
 #: ./monsterz.py:1872
 msgid "IN PUZZLE MODE, PUT TOGETHER THE"
-msgstr "Dans le cadre du mode Puzzle, assemblez le puzzle"
+msgstr "Dans le cadre du mode Puzzle, assemblez"
 
 #: ./monsterz.py:1875
 msgid "PUZZLE BY MOVING PIECES AROUND. BE"
-msgstr "en déplaçant les pièces à l'intérieur du cadre."
+msgstr "le puzzle en déplaçant les pièces à l'intérieur du"
 
 #: ./monsterz.py:1878
 msgid "CAREFUL NOT TO GET STUCK!"
-msgstr "Soyez attentif à ne pas rester coincé."
+msgstr "cadre. Soyez attentif à ne pas rester coincé."
 
 #: ./monsterz.py:1937
 msgid "HIGH SCORES"

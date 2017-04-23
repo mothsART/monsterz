@@ -15,7 +15,7 @@ import os
 import gettext
 
 t = gettext.translation(
-    'monsterz', 
+    'monsterz',
     os.path.join(
         os.path.dirname(os.path.abspath(__file__)),
         'locale/'
@@ -1807,6 +1807,9 @@ class Monsterz:
             text = fonter.render(_('EYE. YOU CAN\'T HAVE MORE THAN 3.'), 24)
             w, h = text.get_rect().size
             system.blit(text, (24 + 6 + 48, 24 + 348 - h / 2))
+            text = fonter.render(_(' '), 24)
+            w, h = text.get_rect().size
+            system.blit(text, (24 + 6 + 48, 24 + 376 - h / 2))
             system.blit(data.eye, (24 + 6, 24 + 306))
         elif self.page == 4:
             # Explanation 1
