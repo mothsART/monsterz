@@ -32,7 +32,7 @@ from os.path import join, isdir, isfile, dirname, expanduser
 from os import write, mkdir, getenv
 
 # String constants
-VERSION = '0.7.1'
+VERSION = '0.8.1'
 COPYRIGHT = 'MONSTERZ - COPYRIGHT 2005 - 2007 SAM HOCEVAR - MONSTERZ IS ' \
             'FREE SOFTWARE, YOU CAN REDISTRIBUTE IT AND/OR MODIFY IT ' \
             'UNDER THE TERMS OF THE WTFPL LICENSE, VERSION 2 - '
