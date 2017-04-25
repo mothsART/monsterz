@@ -263,6 +263,8 @@ class Settings:
             lines = file.readlines()
             file.close()
             for l in [line.split(':') for line in lines]:
+                if l[1] == 'NOBODY' and _('NOBODY') != 'NOBODY':
+                    l[1] = _('NOBODY')
                 if len(l) == 4:
                     self._add_score(l[0], l[1], int(l[2]), int(l[3]))
         except:
