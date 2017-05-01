@@ -214,12 +214,12 @@ class Settings:
         self.config['items'] = 7
 
     def _load_config(self):
-        from re import compile
-        regex = compile('[ \t]*([A-Za-z]+)[ \t]*=[ \t]*([0-9A-Za-z]+)[ \t]*(#.*|)')
         try:
             file = open(self.configfile, 'r')
         except:
             return
+        from re import compile
+        regex = compile('[ \t]*([A-Za-z]+)[ \t]*=[ \t]*([0-9A-Za-z]+)[ \t]*(#.*|)')
         for line in file.readlines():
             m = regex.match(line.strip())
             if not m:
