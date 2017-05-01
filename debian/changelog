@@ -1,3 +1,11 @@
+monsterz (0.8.2-1) unstable; urgency=medium
+
+  * removing the fullscreen mode
+  * change an import order
+  * add translation on cli and license description
+
+ -- Ferry Jérémie <jerem.ferry@gmail.com>  Mon, 1 May 2017 16:33:49 +0200
+
 monsterz (0.8.1-2) unstable; urgency=medium
 
   * Add a full french translation
@@ -72,9 +80,9 @@ monsterz (0.7.1-5) unstable; urgency=low
 
 monsterz (0.7.1-4) unstable; urgency=low
 
-  * Add monsterz.postrm to purge /var/games/monsterz  
+  * Add monsterz.postrm to purge /var/games/monsterz
   * Add myself in Uploaders
-  * Standards-Version: 3.8.2, no change 
+  * Standards-Version: 3.8.2, no change
 
  -- Gonéri Le Bouder <goneri@rulezlan.org>  Mon, 27 Jul 2009 18:42:39 +0200
 
@@ -82,7 +90,7 @@ monsterz (0.7.1-3) unstable; urgency=low
 
   [ Barry deFreese ]
   * Add myself to uploaders.
-  * 020_fix_blit_crash.diff - (Closes: #523877). 
+  * 020_fix_blit_crash.diff - (Closes: #523877).
     + Fix crash with blit in pygame 1.8.1.
     + Thanks to Arnaud Jeansen and RafaÅ‚ Psota.
   * Add set -e to postinst.

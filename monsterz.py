@@ -22,7 +22,6 @@ t = gettext.translation(
     )
 )
 _ = t.ugettext
-#_ = gettext.ugettext
 
 import pygame
 from pygame.locals import *
@@ -32,10 +31,11 @@ from os.path import join, isdir, isfile, dirname, expanduser
 from os import write, mkdir, getenv
 
 # String constants
-VERSION = '0.8.1'
-COPYRIGHT = 'MONSTERZ - COPYRIGHT 2005 - 2007 SAM HOCEVAR - MONSTERZ IS ' \
-            'FREE SOFTWARE, YOU CAN REDISTRIBUTE IT AND/OR MODIFY IT ' \
-            'UNDER THE TERMS OF THE WTFPL LICENSE, VERSION 2 - '
+VERSION = '0.8.2'
+COPYRIGHT = _('MONSTERZ - COPYRIGHT 2005 - 2007 SAM HOCEVAR - MONSTERZ IS ' \
+    'FREE SOFTWARE, YOU CAN REDISTRIBUTE IT AND/OR MODIFY IT ' \
+    'UNDER THE TERMS OF THE WTFPL LICENSE, VERSION 2 - '
+)
 
 # Constants
 HAVE_AI = False # broken
@@ -207,7 +207,6 @@ class Settings:
 
     config = {}
     def _init_config(self):
-        self.config['fullscreen'] = 0
         self.config['music'] = 1
         self.config['sfx'] = 1
         self.config['difficulty'] = 5
@@ -412,12 +411,8 @@ class Sprite:
 
 class System:
     def __init__(self):
-        if settings.get('fullscreen'):
-            f = pygame.FULLSCREEN
-        else:
-            f = 0
         pygame.init()
-        self.window = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), f)
+        self.window = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), 0)
         self.background = pygame.Surface(self.window.get_size())
         try:
             self.have_sound = pygame.mixer.get_init()
@@ -440,20 +435,6 @@ class System:
 
     def play(self, sound):
         if self.have_sound and settings.get('sfx'): data.wav[sound].play()
-
-    def toggle_fullscreen(self):
-        self.play('whip')
-        if settings.get('fullscreen'):
-            settings.set('fullscreen', False)
-            f = 0
-        else:
-            settings.set('fullscreen', True)
-            f = pygame.FULLSCREEN
-        settings.save()
-        if platform == 'win32':
-            self.window = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), f)
-        else:
-            pygame.display.toggle_fullscreen()
 
     def toggle_sfx(self):
         self.play('whip')
@@ -1365,10 +1346,7 @@ class Monsterz:
             c = map(lambda a, b: b - (b - a) * self.gsat[1] / 255, r, color)
             system.blit(led, (440, 408))
             system.blit(fonter.render(_('MUSIC'), 30, c), (470, 406))
-        if settings.get('fullscreen'):
-            led, color = data.led_on, (255, 255, 255)
-        else:
-            led, color = data.led_off, (180, 150, 127)
+        led, color = data.led_off, (180, 150, 127)
         c = map(lambda a, b: b - (b - a) * self.gsat[2] / 255, r, color)
         #system.blit(led, (440, 438))
         #system.blit(fonter.render('FULLSCREEN', 30, c), (470, 436))
@@ -1379,9 +1357,6 @@ class Monsterz:
     def generic_event(self, event):
         if event.type == QUIT:
             self.status = STATUS_QUIT
-            return True
-        elif event.type == KEYDOWN and event.key == K_f:
-            system.toggle_fullscreen()
             return True
         if system.have_sound:
             if event.type == KEYDOWN and event.key == K_s:
@@ -1399,9 +1374,6 @@ class Monsterz:
                 elif 440 < x < 440 + 180 and 408 < y < 408 + 24:
                     system.toggle_music()
                     return True
-            if 440 < x < 440 + 180 and 438 < y < 438 + 24:
-                system.toggle_fullscreen()
-                return True
         return False
 
     wander_monster=randint(0,ITEMS-1)
@@ -1968,39 +1940,45 @@ class Monsterz:
                 return
 
 def version():
-    print 'monsterz ' + VERSION
-    print 'Written by Sam Hocevar, music by MenTaLguY, sound effects by Sun Microsystems,'
-    print 'Inc., Michael Speck, David White and the Battle for Wesnoth project, Mike'
-    print 'Kershaw and Sam Hocevar.'
-    print
-    print 'Copyright (C) 2005, 2006 Sam Hocevar <sam@zoy.org>'
-    print '          (C) 1998 MenTaLguY <mental@rydia.net>'
-    print '          (C) 2002, 2005 Sun Microsystems, Inc.'
-    print '          (C) Michael Speck <kulkanie@gmx.net>'
-    print '          (C) 2003 by David White <davidnwhite@optusnet.com.au> and the'
-    print '              Battle for Wesnoth project'
-    print '          (C) Mike Kershaw <dragorn@kismetwireless.net>'
+    print ''.join([
+        'monsterz ' + VERSION + '\n',
+        _('Written by Sam Hocevar, music by MenTaLguY, sound effects by Sun Microsystems,\n'),
+        _('Inc., Michael Speck, David White and the Battle for Wesnoth project, Mike\n'),
+        'Kershaw and Sam Hocevar.\n',
+        '\n',
+        'Copyright (C) 2005, 2006 Sam Hocevar <sam@zoy.org>\n',
+        '          (C) 1998 MenTaLguY <mental@rydia.net>\n',
+        '          (C) 2002, 2005 Sun Microsystems, Inc.',
+        '          (C) Michael Speck <kulkanie@gmx.net>\n',
+        '          (C) 2003 by David White <davidnwhite@optusnet.com.au> and the\n',
+        '              Battle for Wesnoth project\n',
+        '          (C) Mike Kershaw <dragorn@kismetwireless.net>\n',
+        '\n',
+        _('This program is free software; you can redistribute it and/or modify it under\n'),
+        _('the terms of the Do What The Fuck You Want To Public License, Version 2, as\n'),
+        _('published by Sam Hocevar. See http://sam.zoy.org/wtfpl/ for more details.\n'),
+        _('The sound effects are released under their own licences: applause.wav and\n'),
+        _('pop.wav are covered by the LGPL, the others are covered by the GPL.\n')
+    ])
 
-    print 'This program is free software; you can redistribute it and/or modify it under'
-    print 'the terms of the Do What The Fuck You Want To Public License, Version 2, as'
-    print 'published by Sam Hocevar. See http://sam.zoy.org/wtfpl/ for more details.'
-    print 'The sound effects are released under their own licences: applause.wav and'
-    print 'pop.wav are covered by the LGPL, the others are covered by the GPL.'
 
 def usage():
-    print 'Usage: monsterz [OPTION]...'
-    print
-    print 'Options'
-    print ' -h, --help         display this help and exit'
-    print ' -v, --version      display version information and exit'
-    print ' -f, --fullscreen   start in full screen mode'
-    print ' -m, --nomusic      disable music'
-    print ' -s, --nosfx        disable sound effects'
-    print '     --outfd <fd>   output scores to file descriptor <fd>'
-    print '     --data <dir>   set alternate data directory to <dir>'
-    print '     --score <file> set score file to <file>'
-    print
-    print 'Report bugs or suggestions to <sam@zoy.org>.'
+    print ''.join([
+        _('Usage: monsterz [OPTION]...\n'),
+        '\n',
+        _('Options\n'),
+        _(' -h, --help         display this help and exit\n'),
+        _(' -v, --version      display version information and exit\n'),
+        _(' -m, --nomusic      disable music\n'),
+        _(' -s, --nosfx        disable sound effects\n'),
+        _('     --outfd <fd>   output scores to file descriptor <fd>\n'),
+        _('     --data <dir>   set alternate data directory to <dir>\n'),
+        _('     --score <file> set score file to <file>\n'),
+        '',
+        _('Report bugs or suggestions to <sam@zoy.org>.')
+    ])
+
+
 
 def main():
     from getopt import getopt, GetoptError
@@ -2010,7 +1988,7 @@ def main():
     sharedir = dirname(argv[0])
     outfd = None
     try:
-        long = ['help', 'version', 'music', 'sound', 'fullscreen',
+        long = ['help', 'version', 'music', 'sound',
                 'outfd=', 'data=', 'score=']
         opts = getopt(argv[1:], 'hvmsf', long)[0]
     except GetoptError:
@@ -2027,8 +2005,6 @@ def main():
             override['music'] = 0
         elif opt in ('-s', '--nosfx'):
             override['sfx'] = 0
-        elif opt in ('-f', '--fullscreen'):
-            override['fullscreen'] = 0
         elif opt in ('--outfd'):
             try:
                 outfd = int(arg)
@@ -2057,4 +2033,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

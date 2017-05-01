@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-04-17 22:51+CEST\n"
+"POT-Creation-Date: 2017-05-01 15:53+CEST\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,6 +14,10 @@ msgstr ""
 "Content-Transfer-Encoding: ENCODING\n"
 "Generated-By: pygettext.py 1.5\n"
 
+
+#: ./monsterz.py:35
+msgid "MONSTERZ - COPYRIGHT 2005 - 2007 SAM HOCEVAR - MONSTERZ IS FREE SOFTWARE, YOU CAN REDISTRIBUTE IT AND/OR MODIFY IT UNDER THE TERMS OF THE WTFPL LICENSE, VERSION 2 - "
+msgstr ""
 
 #: ./monsterz.py:56
 msgid "hairy"
@@ -51,203 +55,296 @@ msgstr ""
 msgid "ghost"
 msgstr ""
 
-#: ./monsterz.py:274
+#: ./monsterz.py:266 ./monsterz.py:267 ./monsterz.py:276
 msgid "NOBODY"
 msgstr ""
 
-#: ./monsterz.py:875
+#: ./monsterz.py:877
 msgid "GAME OVER"
 msgstr ""
 
-#: ./monsterz.py:879
+#: ./monsterz.py:881
 msgid "YUO = TEH L0SER"
 msgstr ""
 
-#: ./monsterz.py:881
+#: ./monsterz.py:883
 msgid "WELL, AT LEAST YOU TRIED"
 msgstr ""
 
-#: ./monsterz.py:883
+#: ./monsterz.py:885
 msgid "W00T! YUO IS TEH R0X0R"
 msgstr ""
 
-#: ./monsterz.py:885
+#: ./monsterz.py:887
 msgid "ZOMFG!!!111!!! YUO PWND!!!%$#@%@#"
 msgstr ""
 
-#: ./monsterz.py:892
+#: ./monsterz.py:894
 msgid "PAUSED"
 msgstr ""
 
-#: ./monsterz.py:897 ./monsterz.py:1508
+#: ./monsterz.py:899 ./monsterz.py:1510
 msgid "TRAINING"
 msgstr ""
 
-#: ./monsterz.py:899
+#: ./monsterz.py:901
 msgid "LEVEL"
 msgstr ""
 
-#: ./monsterz.py:904
+#: ./monsterz.py:906
 msgid "MONSTERS NEEDED"
 msgstr ""
 
-#: ./monsterz.py:906
+#: ./monsterz.py:908
 msgid "PUZZLE LEVEL"
 msgstr ""
 
-#: ./monsterz.py:908
+#: ./monsterz.py:910
 msgid "UNLIMITED LEVEL"
 msgstr ""
 
-#: ./monsterz.py:913
+#: ./monsterz.py:915
 msgid "LUCKY MONSTER"
 msgstr ""
 
-#: ./monsterz.py:927
+#: ./monsterz.py:929
 msgid "COMPLETED"
 msgstr ""
 
-#: ./monsterz.py:929
+#: ./monsterz.py:931
 msgid "LEVEL UP"
 msgstr ""
 
-#: ./monsterz.py:934 ./monsterz.py:1797
+#: ./monsterz.py:936 ./monsterz.py:1799
 msgid "NO MORE MOVES"
 msgstr ""
 
-#: ./monsterz.py:991
+#: ./monsterz.py:993
 msgid "PAUSE"
 msgstr ""
 
-#: ./monsterz.py:994
+#: ./monsterz.py:996
 msgid "ABORT"
 msgstr ""
 
-#: ./monsterz.py:1358
+#: ./monsterz.py:1360
 msgid "SOUND FX"
 msgstr ""
 
-#: ./monsterz.py:1365
+#: ./monsterz.py:1367
 msgid "MUSIC"
 msgstr ""
 
-#: ./monsterz.py:1439
+#: ./monsterz.py:1441
 msgid "HELP"
 msgstr ""
 
-#: ./monsterz.py:1439
+#: ./monsterz.py:1441
 msgid "NEW GAME"
 msgstr ""
 
-#: ./monsterz.py:1439
+#: ./monsterz.py:1441
 msgid "QUIT"
 msgstr ""
 
-#: ./monsterz.py:1439
+#: ./monsterz.py:1441
 msgid "SCORES"
 msgstr ""
 
-#: ./monsterz.py:1508
+#: ./monsterz.py:1510
 msgid "CLASSIC"
 msgstr ""
 
-#: ./monsterz.py:1508
+#: ./monsterz.py:1510
 msgid "PUZZLE"
 msgstr ""
 
-#: ./monsterz.py:1540
+#: ./monsterz.py:1542
 msgid "GAME TYPE"
 msgstr ""
 
-#: ./monsterz.py:1565
+#: ./monsterz.py:1567
 msgid "DIFFICULTY"
 msgstr ""
 
-#: ./monsterz.py:1676
+#: ./monsterz.py:1678
 msgid "SWAP ADJACENT MONSTERS TO CREATE"
 msgstr ""
 
-#: ./monsterz.py:1679
+#: ./monsterz.py:1681
 msgid "ALIGNMENTS OF THREE OR MORE. NEW"
 msgstr ""
 
-#: ./monsterz.py:1682
+#: ./monsterz.py:1684
 msgid "MONSTERS WILL FILL THE HOLES."
 msgstr ""
 
-#: ./monsterz.py:1723
+#: ./monsterz.py:1725
 msgid "CREATE CHAIN REACTIONS TO GET TWICE"
 msgstr ""
 
-#: ./monsterz.py:1726
+#: ./monsterz.py:1728
 msgid "AS MANY POINTS, THEN 4x, 8x ETC."
 msgstr ""
 
-#: ./monsterz.py:1731
+#: ./monsterz.py:1733
 msgid "THE LUCKY MONSTER EARNS YOU TWICE"
 msgstr ""
 
-#: ./monsterz.py:1734
+#: ./monsterz.py:1736
 msgid "AS MANY POINTS AS OTHER MONSTERS."
 msgstr ""
 
-#: ./monsterz.py:1783
+#: ./monsterz.py:1785
 msgid "YOU CAN ALWAYS PERFORM A VALID MOVE."
 msgstr ""
 
-#: ./monsterz.py:1786
+#: ./monsterz.py:1788
 msgid "WHEN NO MORE MOVES ARE POSSIBLE, YOU"
 msgstr ""
 
-#: ./monsterz.py:1789
+#: ./monsterz.py:1791
 msgid "GET A COMPLETE NEW BOARD."
 msgstr ""
 
-#: ./monsterz.py:1801
+#: ./monsterz.py:1803
 msgid "USE THE EYE TO FIND WHERE TO PLAY."
 msgstr ""
 
-#: ./monsterz.py:1804
+#: ./monsterz.py:1806
 msgid "EACH 10,000 POINTS YOU GET A NEW"
 msgstr ""
 
-#: ./monsterz.py:1807
+#: ./monsterz.py:1809
 msgid "EYE. YOU CAN'T HAVE MORE THAN 3."
 msgstr ""
 
-#: ./monsterz.py:1813
+#: ./monsterz.py:1812
+msgid " "
+msgstr ""
+
+#: ./monsterz.py:1818
 msgid "WHEN ONLY ONE KIND OF MONSTER IS"
 msgstr ""
 
-#: ./monsterz.py:1816
+#: ./monsterz.py:1821
 msgid "NEEDED TO FINISH THE LEVEL, MONSTERS"
 msgstr ""
 
-#: ./monsterz.py:1819
+#: ./monsterz.py:1824
 msgid "OF THAT KIND GET AN ANGRY FACE."
 msgstr ""
 
-#: ./monsterz.py:1839
+#: ./monsterz.py:1844
 msgid "CLICK ON THE BONUS TO REMOVE ALL"
 msgstr ""
 
-#: ./monsterz.py:1842
+#: ./monsterz.py:1847
 msgid "MONSTERS OF A RANDOM KIND."
 msgstr ""
 
-#: ./monsterz.py:1872
+#: ./monsterz.py:1877
 msgid "IN PUZZLE MODE, PUT TOGETHER THE"
 msgstr ""
 
-#: ./monsterz.py:1875
+#: ./monsterz.py:1880
 msgid "PUZZLE BY MOVING PIECES AROUND. BE"
 msgstr ""
 
-#: ./monsterz.py:1878
+#: ./monsterz.py:1883
 msgid "CAREFUL NOT TO GET STUCK!"
 msgstr ""
 
-#: ./monsterz.py:1937
+#: ./monsterz.py:1942
 msgid "HIGH SCORES"
+msgstr ""
+
+#: ./monsterz.py:1973
+msgid ""
+"Written by Sam Hocevar, music by MenTaLguY, sound effects by Sun Microsystems,\n"
+msgstr ""
+
+#: ./monsterz.py:1974
+msgid ""
+"Inc., Michael Speck, David White and the Battle for Wesnoth project, Mike\n"
+msgstr ""
+
+#: ./monsterz.py:1985
+msgid ""
+"This program is free software; you can redistribute it and/or modify it under\n"
+msgstr ""
+
+#: ./monsterz.py:1986
+msgid ""
+"the terms of the Do What The Fuck You Want To Public License, Version 2, as\n"
+msgstr ""
+
+#: ./monsterz.py:1987
+msgid ""
+"published by Sam Hocevar. See http://sam.zoy.org/wtfpl/ for more details.\n"
+msgstr ""
+
+#: ./monsterz.py:1988
+msgid ""
+"The sound effects are released under their own licences: applause.wav and\n"
+msgstr ""
+
+#: ./monsterz.py:1989
+msgid ""
+"pop.wav are covered by the LGPL, the others are covered by the GPL.\n"
+msgstr ""
+
+#: ./monsterz.py:1995
+msgid ""
+"Usage: monsterz [OPTION]...\n"
+msgstr ""
+
+#: ./monsterz.py:1997
+msgid ""
+"Options\n"
+msgstr ""
+
+#: ./monsterz.py:1998
+msgid ""
+" -h, --help         display this help and exit\n"
+msgstr ""
+
+#: ./monsterz.py:1999
+msgid ""
+" -v, --version      display version information and exit\n"
+msgstr ""
+
+#: ./monsterz.py:2000
+msgid ""
+" -f, --fullscreen   start in full screen mode\n"
+msgstr ""
+
+#: ./monsterz.py:2001
+msgid ""
+" -m, --nomusic      disable music\n"
+msgstr ""
+
+#: ./monsterz.py:2002
+msgid ""
+" -s, --nosfx        disable sound effects\n"
+msgstr ""
+
+#: ./monsterz.py:2003
+msgid ""
+"     --outfd <fd>   output scores to file descriptor <fd>\n"
+msgstr ""
+
+#: ./monsterz.py:2004
+msgid ""
+"     --data <dir>   set alternate data directory to <dir>\n"
+msgstr ""
+
+#: ./monsterz.py:2005
+msgid ""
+"     --score <file> set score file to <file>\n"
+msgstr ""
+
+#: ./monsterz.py:2007
+msgid "Report bugs or suggestions to <sam@zoy.org>."
 msgstr ""
 

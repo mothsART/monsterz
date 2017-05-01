@@ -15,6 +15,10 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 
 
+#: ./monsterz.py:35
+msgid "MONSTERZ - COPYRIGHT 2005 - 2007 SAM HOCEVAR - MONSTERZ IS FREE SOFTWARE, YOU CAN REDISTRIBUTE IT AND/OR MODIFY IT UNDER THE TERMS OF THE WTFPL LICENSE, VERSION 2 - "
+msgstr "MONSTERZ - COPYRIGHT 2005 - 2007 SAM HOCEVAR - MONSTERZ EST UN LOGICIEL LIBRE QUE VOUS POUVEZ REDISTRIBUER ET/OU MODIFIER DANS LE CADRE DE LA LICENCE WTFPL LICENSE, VERSION 2 - "
+
 #: ./monsterz.py:47
 msgid "hairy"
 msgstr "poilu"
@@ -254,3 +258,86 @@ msgstr "cadre. Soyez attentif à ne pas rester coincé."
 msgid "HIGH SCORES"
 msgstr "Les meilleurs scores"
 
+#: ./monsterz.py:1973
+msgid ""
+"Written by Sam Hocevar, music by MenTaLguY, sound effects by Sun Microsystems,\n"
+msgstr "Écrit par by Sam Hocevar, musique par MenTaLguY, effets sonores par Sun Microsystems,\n"
+
+#: ./monsterz.py:1974
+msgid ""
+"Inc., Michael Speck, David White and the Battle for Wesnoth project, Mike\n"
+msgstr "Inc., Michael Speck, David White et le projet Battle for Wesnoth, Mike\n"
+
+#: ./monsterz.py:1985
+msgid ""
+"This program is free software; you can redistribute it and/or modify it under\n"
+msgstr "Ce programme est un logiciel libre que vous pouvez redistribuer et ou modifier selon\n"
+
+#: ./monsterz.py:1986
+msgid ""
+"the terms of the Do What The Fuck You Want To Public License, Version 2, as\n"
+msgstr "les termes de la license Do What The Fuck You Want To Public License, Version 2, tel que\n"
+
+#: ./monsterz.py:1987
+msgid ""
+"published by Sam Hocevar. See http://sam.zoy.org/wtfpl/ for more details.\n"
+msgstr "publié par Sam Hocevar. Pour avoir plus de détails : http://sam.zoy.org/wtfpl/\n"
+
+#: ./monsterz.py:1988
+msgid ""
+"The sound effects are released under their own licences: applause.wav and\n"
+msgstr "Les effets sonores ont leur licences propres : applause.wav et\n"
+
+#: ./monsterz.py:1989
+msgid ""
+"pop.wav are covered by the LGPL, the others are covered by the GPL.\n"
+msgstr "pop.wav sont couverts par la LGPL, le reste est couvert par la GPL.\n"
+
+#: ./monsterz.py:1995
+msgid ""
+"Usage: monsterz [OPTION]...\n"
+msgstr "Utilisation : monsterz [Option]...\n"
+
+#: ./monsterz.py:1997
+msgid ""
+"Options\n"
+msgstr "Options\n"
+
+#: ./monsterz.py:1998
+msgid ""
+" -h, --help         display this help and exit\n"
+msgstr " -h, --help             affiche cette aide\n"
+
+#: ./monsterz.py:1999
+msgid ""
+" -v, --version      display version information and exit\n"
+msgstr " -v, --version          renvoi le numéro de version\n"
+
+#: ./monsterz.py:2001
+msgid ""
+" -m, --nomusic      disable music\n"
+msgstr " -m, --nomusic          coupe la musique\n"
+
+#: ./monsterz.py:2002
+msgid ""
+" -s, --nosfx        disable sound effects\n"
+msgstr " -s, --nosfx            coupe les effets sonores\n"
+
+#: ./monsterz.py:2003
+msgid ""
+"     --outfd <fd>   output scores to file descriptor <fd>\n"
+msgstr "     --outfd <df>       exporte les scores dans un descripteur de fichiers <df>\n"
+
+#: ./monsterz.py:2004
+msgid ""
+"     --data <dir>   set alternate data directory to <dir>\n"
+msgstr "     --data <dossier>   utilise un dossier alternatif pour stocker les données, soit <dossier>\n"
+
+#: ./monsterz.py:2005
+msgid ""
+"     --score <file> set score file to <file>\n"
+msgstr "     --score <fichier>  enregistre les scores dans le <fichier>\n"
+
+#: ./monsterz.py:2007
+msgid "Report bugs or suggestions to <sam@zoy.org>."
+msgstr "Vous pouvez reporter les bugs et suggestions à <sam@zoy.org>."
